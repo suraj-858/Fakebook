@@ -1,0 +1,80 @@
+@import '../../mixins.scss';
+
+.container-nav{
+    height: 50px;
+    background-color: rgb(61, 61, 61);
+    box-shadow: 0 0 20px rgb(0, 0, 0) ;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+
+    .logo-section{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        img{
+            height: 45px;
+            width: 45px;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    .nav-element{
+        width: 70vw;
+        display: flex;
+        margin: 0;
+        list-style-type: none;
+        justify-content: space-evenly;
+        align-items: center;
+
+
+        .friend-element{
+            font-size: 16px;
+            color: white;
+            background-color: rgba(111, 111, 113, 0.66);
+            padding: 6px 8px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+       
+        .friend-element:focus {
+            color: red;
+            background-color: rgba(56, 56, 216, 0.636);
+        }
+
+        .message-element{
+
+            font-size: 16px;
+            color: white;
+            background-color: rgba(111, 111, 113, 0.66);
+            padding: 6px 10px;
+            border-radius: 50%;
+            cursor: pointer;    
+
+        }
+        .icon-show {
+
+            color: rgb(0, 0, 118);
+            background-color: rgba(90, 90, 227, 0.636);
+            
+        }
+        
+
+        .profile-element{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            img{
+                height: 45px;
+                width: 45px;
+            }
+        }
+        .profile-element:active{
+            opacity: 0.8;
+        }
+    }
+
+   
+}

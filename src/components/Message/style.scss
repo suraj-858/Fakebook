@@ -1,0 +1,25 @@
+.message-container-hide{
+    display: none;
+}
+
+.message-container{
+    height: calc(100% - 50px);
+    background-color: rgb(61, 61, 61);
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    .message-header{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        color: white;
+
+
+    }
+}

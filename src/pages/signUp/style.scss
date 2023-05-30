@@ -1,0 +1,141 @@
+@import '../../mixins.scss';
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .items-container {
+    width: 100vw;
+
+    @include md {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .text-container {
+      margin: 20px;
+
+      h2 {
+        width: fit-content;
+        line-height: 1;
+        margin: 0 auto;
+        color: blue;
+        font-size: 3rem;
+        font-weight: 700;
+
+        @include md {
+          width: auto;
+          font-size: 4rem;
+          font-weight: 800;
+        }
+      }
+
+      p {
+        width: fit-content;
+        margin: auto;
+        font-size: 20px;
+      }
+    }
+
+    .signUp-container {
+      margin: auto;
+      width: 90%;
+      background: rgba(196, 201, 200, 0.47);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(50, 16, 16, 0.4);
+      backdrop-filter: blur(7.4px);
+      -webkit-backdrop-filter: blur(7.4px);
+      border: 1px solid rgba(142, 155, 152, 0.38);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 440px;
+      h3 {
+        margin: 15px;
+        color: rgb(71, 69, 69);
+        font-size: 26px;
+      }
+
+      @include md {
+        margin: 10px;
+        max-width: 500px;
+        width: 40vw;
+        min-width: 400px;
+      }
+      .inputs-container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .accurate-margin {
+          margin: 0 0 12px 0;
+        }
+
+        .input-container {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          span {
+            height: 14px;
+
+            p {
+              margin: 0;
+              font-size: 14px;
+              margin-left: 10px;
+              // display: none;
+            }
+          }
+
+          label {
+            font-size: 20px;
+            font-weight: 500;
+          }
+          input {
+            height: 35px;
+            background-color: rgb(239, 240, 241);
+            border-radius: 14px;
+            border: none;
+            padding: 0 15px;
+            font-size: 16px;
+            outline-offset: 2px;
+            outline: 1px solid blue;
+          }
+        }
+      }
+      button {
+        width: 120px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-weight: 500;
+        font-size: 16px;
+        background-color: rgb(54, 54, 241);
+        height: 45px;
+        margin: 20px 0 5px 0;
+        transition: ease-in-out 0.1s;
+      }
+      .btnSubmit {
+        cursor: pointer;
+      }
+      .btnSubmit:active {
+        scale: 0.95;
+      }
+      .btnNotSubmit {
+        scale: 1;
+        background-color: rgb(104, 104, 237);
+      }
+      p {
+        height: 18px;
+        padding: 0;
+        margin: 0;
+      }
+      span{
+        margin: 0 0 5px 0;
+      }
+    }
+  }
+}
