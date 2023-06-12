@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const app = express();
 
 const PORT = 5000;
-const MONGO_URI = "mongodb://localhost:27017/Fakebook";
+const MONGO_URI = "mongodb+srv://suraj:john123@cluster0.5sdyknh.mongodb.net/Fakebook?retryWrites=true&w=majority";
 
 
 app.use(
@@ -24,6 +24,9 @@ app.use('/api/avatar/:id', require('./Routes/Users'));
 
 //available routes for posts
 app.use('/api/post', require('./Routes/Posts'));
+
+// available routes for message
+app.use('/api/message', require('./Routes/Messages'));
 
 
 mongoose.connect(MONGO_URI, {

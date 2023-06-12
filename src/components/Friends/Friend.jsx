@@ -2,40 +2,17 @@ import React from 'react'
 import './style.scss'
 import { useContext } from 'react'
 import { contextUser } from '../context/UserContext'
-import { useEffect } from 'react'
-import axios from 'axios'
-import { getAllUser } from '../../apiRoutes/ApiRoutes'
+// import { useEffect } from 'react'
+
+// import { getAllUser } from '../../apiRoutes/ApiRoutes'
 import { useState } from 'react'
 import Profile from '../profile/Profile'
 
 
 const Friend = () => {
-const {mobileFriendList, chatProfile, chatProfileShow} = useContext(contextUser);
-const [userArray, setUserArray] = useState([]);
+const {mobileFriendList, chatProfile, chatProfileShow, filteredUser} = useContext(contextUser);
 const [allUserInfo, setAllUserInfo] = useState();
 
-
-const config = {
-  headers:{
-    "auth-token": localStorage.getItem("token")
-  } 
-}
-
-useEffect(() =>{
-
-  const fetchAllUser = async() =>{
-    const response = await axios.get(getAllUser, config );
-   
-    setUserArray(response.data);
-    
-  }
-  fetchAllUser();
-
-}, [])
-
-const loggedInUserID = localStorage.getItem('userId');
-
-const filteredUser = userArray.filter(user => user._id  !==  loggedInUserID);
 
 
 

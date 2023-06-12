@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.scss'
 import { useContext } from 'react'
 import { contextUser } from '../context/UserContext'
@@ -7,7 +7,9 @@ import ChatWindow from '../../components/chatWindow/ChatWindow'
 
 
 function Message() {
-  const {mobileMessageList} = useContext(contextUser)
+  const {mobileMessageList, filteredUser} = useContext(contextUser)
+  const [chatUserId, setChatUserId] = useState();
+   console.log(chatUserId);
   return (
    <>
    
@@ -16,11 +18,16 @@ function Message() {
            <h3>Messages</h3>
         </div>
         <div className="message-container">
-           <SingleMessage/> 
+         {filteredUser.map((user, index) =>{
+             
+             return(<>
+           <SingleMessage key={index} user = {user} setChatUserId = {setChatUserId} /> 
+             </>)
+         })}
       </div>
 
    </div> 
-   <ChatWindow/>
+   <ChatWindow chatUserId = {chatUserId}/>
    </>
   )
 }

@@ -5,12 +5,13 @@ import axios from 'axios'
 import { coverImage, getPost, userImage } from '../../apiRoutes/ApiRoutes'
 import { useEffect } from 'react'
 import Post from '../post/Post'
+import ChatWindow from '../chatWindow/ChatWindow'
 
 
 const Profile = ({allUserInfo, singleUserData}) => {
 
-  
-    const{profileShow, chatProfileShow } = useContext(contextUser);
+   
+    const{profileShow, chatProfileShow, userInbox } = useContext(contextUser);
     
     const [postImage, setPostImage] = useState("");
 
@@ -104,6 +105,7 @@ const Profile = ({allUserInfo, singleUserData}) => {
           <div className="name-and-followers">
           <h3>{chatProfileShow ? allUserInfo?.username: singleUserData?.username}</h3>
           <p>1.2k friends</p>
+          <button onClick={userInbox}>Message</button>
           </div>
 
           <div className="photo-section">

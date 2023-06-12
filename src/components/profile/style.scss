@@ -112,6 +112,19 @@
             p{
                 margin: 5px 0;
             }
+            button{
+                background-color: #1877f2;
+                border: none;
+                padding:  10px 20px;
+                border-radius: 5px;
+                font-size: 18px;
+                color: white;
+                cursor: pointer;
+            }
+            button:active{
+                background-color: #1877d3;
+                scale: 99%;
+            }
         }
     
     

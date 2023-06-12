@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { createContext } from "react";
+import { getAllUser } from '../../apiRoutes/ApiRoutes'
+import axios from 'axios'
 
 export const contextUser = createContext();
 
@@ -94,9 +96,36 @@ export const UserContext = ({children}) =>{
         }
 
     }
+
+    const [userArray, setUserArray] = useState([]);
+
+
+    const config = {
+        headers:{
+          "auth-token": localStorage.getItem("token")
+        } 
+      }
+      
+      useEffect(() =>{
+      
+        const fetchAllUser = async() =>{
+          const response = await axios.get(getAllUser, config );
+         
+          setUserArray(response.data);
+          
+        }
+        fetchAllUser();
+      
+      }, [])
+      
+      const loggedInUserID = localStorage.getItem('userId');
+      
+      const filteredUser = userArray.filter(user => user._id  !==  loggedInUserID);
+
+
     
     return(
-<contextUser.Provider value={{chatProfileShow, chatProfile, userInbox, userInboxShow, mobileFriendList, mobileFriendShow, mobileMessageShow, mobileMessageList, profileShow, profilePictureShow}}>
+<contextUser.Provider value={{filteredUser, chatProfileShow, chatProfile, userInbox, userInboxShow, mobileFriendList, mobileFriendShow, mobileMessageShow, mobileMessageList, profileShow, profilePictureShow}}>
     {children}
 </contextUser.Provider>
 )}

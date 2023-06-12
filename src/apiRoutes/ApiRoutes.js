@@ -12,3 +12,9 @@ export const userImage = `${host}/api/user/userImage`;
 export const createPost = `${host}/api/post/createPost`;
 export const getPost =  `${host}/api/post/getpost`;
 export const getAllPost =  `${host}/api/post/allpost`
+
+
+//routes for the user's messages
+
+export const createMessage = `${host}/api/message/createMessage`;
+export const allMessage = `${host}/api/message/getAllMessage`;
